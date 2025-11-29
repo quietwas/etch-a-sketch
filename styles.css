@@ -10,14 +10,14 @@
   align-items: center;
 }
 
-#container>div {
+#container>.box {
   border: 1px solid black;
   height: 25px;
   width: 25px;
 }
 
 /* Every 17th div is a line break allowing for rows to be made after 16 columns are formed */
-#container>div:nth-child(17n + 1) {
+#container>.box:nth-child(17n + 1) {
   width: 100%;
   border: 0;
   height: 0;
