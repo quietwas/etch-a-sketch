@@ -1,0 +1,24 @@
+/* Border-Box allows for the ability to add border and padding without changing the size of the element */
+* {
+  box-sizing: border-box;
+}
+
+#container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+#container>div {
+  border: 1px solid black;
+  height: 25px;
+  width: 25px;
+}
+
+/* Every 17th div is a line break allowing for rows to be made after 16 columns are formed */
+#container>div:nth-child(17n + 1) {
+  width: 100%;
+  border: 0;
+  height: 0;
+}
