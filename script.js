@@ -11,14 +11,33 @@ function createGrid(n){
         div.style.height = `${size / n}px`
         container.appendChild(div)
     }
-}
 
-createGrid(16)
-
-// Selects all boxes and then add an event listener for each box which changes the background color when the mouse touches it
-const boxes = document.querySelectorAll(".box")
-boxes.forEach((boxes) => {
+    // Selects all boxes and then add an event listener for each box which changes the background color when the mouse touches it
+    const boxes = document.querySelectorAll(".box")
+    boxes.forEach((boxes) => {
     boxes.addEventListener("mouseover", () => {
         boxes.style.backgroundColor = "black"
+        })
     })
+}
+
+function obtainPixels(){
+    let count = 0
+    do {
+        count = Number(prompt("Enter a number between 1 and 100"))
+    } while (count < 1 || count > 100)
+    return count
+}
+
+function deleteGrid(){
+    const boxes = document.querySelectorAll(".box")
+    boxes.forEach(el => el.remove())
+}
+
+const canvas = document.querySelector(".canvas")
+canvas.addEventListener("click", () => {
+    deleteGrid()
+    createGrid(obtainPixels())
 })
+
+createGrid(16)
