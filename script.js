@@ -37,7 +37,7 @@ function deleteGrid(){
 function addRandomColor() {
     const boxes = document.querySelectorAll(".box")
     boxes.forEach(boxes => boxes.style.backgroundColor = "white")
-    boxes.forEach(boxes => boxes.style.opacity = 1)
+    boxes.forEach(boxes => boxes.style.opacity = "1")
     const rainbow = ["red", "orange", "yellow", "green", "blue", "indigo", "purple"]
     boxes.forEach((boxes) => {
     boxes.addEventListener("mouseover", () => {
