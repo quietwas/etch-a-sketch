@@ -34,10 +34,23 @@ function deleteGrid(){
     boxes.forEach(el => el.remove())
 }
 
+function addRandomColor() {
+    const boxes = document.querySelectorAll(".box")
+    const rainbow = ["red", "orange", "yellow", "green", "blue", "indigo", "purple"]
+    boxes.forEach((boxes) => {
+    boxes.addEventListener("mouseover", () => {
+        boxes.style.backgroundColor = `${rainbow[Math.floor(Math.random() * 7)]}`
+        })
+    })
+}
+
 const canvas = document.querySelector(".canvas")
 canvas.addEventListener("click", () => {
     deleteGrid()
     createGrid(obtainPixels())
 })
+
+const randomize = document.querySelector(".randomize")
+randomize.addEventListener("click", addRandomColor)
 
 createGrid(16)
