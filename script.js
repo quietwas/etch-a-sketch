@@ -31,15 +31,27 @@ function obtainPixels(){
 
 function deleteGrid(){
     const boxes = document.querySelectorAll(".box")
-    boxes.forEach(el => el.remove())
+    boxes.forEach(boxes => boxes.remove())
 }
 
 function addRandomColor() {
     const boxes = document.querySelectorAll(".box")
+    boxes.forEach(boxes => boxes.style.backgroundColor = "white")
     const rainbow = ["red", "orange", "yellow", "green", "blue", "indigo", "purple"]
     boxes.forEach((boxes) => {
     boxes.addEventListener("mouseover", () => {
         boxes.style.backgroundColor = `${rainbow[Math.floor(Math.random() * 7)]}`
+        })
+    })
+}
+
+function addDarken() {
+    const boxes = document.querySelectorAll(".box")
+    boxes.forEach(boxes => boxes.style.backgroundColor = "white")
+    boxes.forEach((boxes) => {
+    boxes.addEventListener("mouseover", () => {
+        boxes.style.backgroundColor = "black"
+        boxes.style.opacity = Number(boxes.style.opacity) + 0.1
         })
     })
 }
@@ -52,5 +64,8 @@ canvas.addEventListener("click", () => {
 
 const randomize = document.querySelector(".randomize")
 randomize.addEventListener("click", addRandomColor)
+
+const darken = document.querySelector(".darken")
+darken.addEventListener("click", addDarken)
 
 createGrid(16)
